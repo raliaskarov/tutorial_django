@@ -1,3 +1,15 @@
+# virtual environment
 env
-env/
-*/env/
+venv
+ENV/
+.env/
+**/env/
+**/venv/
+
+# byte-complied / cashe
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*pytest_cache/
