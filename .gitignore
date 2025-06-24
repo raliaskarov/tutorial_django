@@ -5,6 +5,7 @@ ENV/
 .env/
 **/env/
 **/venv/
+env/
 
 # byte-complied / cashe
 __pycache__/
