@@ -22,20 +22,20 @@ class EnrollView(View):
         course = get_object_or_404(Course, pk=course_id)
         course.total_enrollment += 1
         course.save()
-        return HttpResponseRedirect(reverse(viewname='onlinecourse:course_details', args=[course.id]))
+        return HttpResponseRedirect(reverse(viewname='onlinecourse:course_details', args=(course.id)))
 
-class CourseDetailsView(View):
-    # Handles get request
-    def get(self, request, *args, **kwargs):
-        context = {}
-        # We get URL parameter pk from keyword argument list as course_id
-        course_id = kwargs.get('pk')
-        try:
-            course = Course.objects.get(pk=course_id)
-            context['course'] = course
-            return render(request, 'onlinecourse/course_detail.html', context)
-        except Course.DoesNotExist:
-            raise Http404("No course matches the given id.")
+#class CourseDetailsView(View):
+#    # Handles get request
+#    def get(self, request, *args, **kwargs):
+#        context = {}
+#        # We get URL parameter pk from keyword argument list as course_id
+#        course_id = kwargs.get('pk')
+#        try:
+#            course = Course.objects.get(pk=course_id)
+#            context['course'] = course
+#            return render(request, 'onlinecourse/course_detail.html', context)
+#        except Course.DoesNotExist:
+#            raise Http404("No course matches the given id.")
 
 
 ### --- Generic built-in views --- 
