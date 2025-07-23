@@ -132,7 +132,7 @@ def extract_answers(request):
 
 def show_exam_result(request, course_id, submission_id):
     context = {}
-    crouse = get_object_or_404(Course, pk=course_id)
+    course = get_object_or_404(Course, pk=course_id)
     submission = Submission.objects.get(id=submission_id)
     choices = submission.choices.all()
 
